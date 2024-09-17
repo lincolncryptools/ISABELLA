@@ -1,0 +1,87 @@
+{
+    "scheme_id": "cm14",
+    "security": {
+        "analysis": "security",
+        "k": [
+            "(alpha_i + r) / b",
+            "r"
+        ],
+        "c": [
+            "s * b"
+        ],
+        "mpk": [
+            "b"
+        ],
+        "key": "alpha_i * s",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s",
+            "b"
+        ],
+        "corruptable_vars": []
+    },
+    "master_key": {
+        "analysis": "master_key",
+        "k": [
+            "(alpha_i + r) / b",
+            "r"
+        ],
+        "master_key": "alpha_i",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s"
+        ],
+        "corruption_model": "AA",
+        "corruptable_vars": [
+            {
+                "type": "MPK_AA",
+                "var": "b"
+            }
+        ],
+        "MPK_CA": [],
+        "MPK_AA": [
+            "alpha_i",
+            "b"
+        ],
+        "MPK_vars": [],
+        "GP_vars": []
+    },
+    "decryption": {
+        "analysis": "decryption",
+        "k": [
+            "(alpha_i + r) / b",
+            "r"
+        ],
+        "c": [
+            "s * b",
+            "s * b2"
+        ],
+        "mpk": [
+            "b"
+        ],
+        "gp": [],
+        "key": "alpha_i * s",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s",
+            "b"
+        ],
+        "corruption_model": "AA_extended",
+        "corruptable_vars": [
+            {
+                "type": "MPK_AAi",
+                "var": "b2"
+            }
+        ],
+        "MPK_AAi": [
+            "b2"
+        ],
+        "MPK_AAj": [
+            "b"
+        ],
+        "misc_vars": []
+    }
+}

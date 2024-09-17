@@ -1,0 +1,28 @@
+{
+    "scheme_id": "qlz13",
+    "analysis": "master_key",
+    "k": [
+        "alpha_i + r * b + b1 / (x + bp)",
+        "r * b - rp * b1",
+        "(rp + 1 / (x + bp)) * b1"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "b",
+        "b1",
+        "bp",
+        "r",
+        "rp",
+        "x"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_CA": [],
+    "MPK_AA": [
+        "alpha_i",
+        "bp"
+    ],
+    "MPK_vars": [],
+    "GP_vars": []
+}

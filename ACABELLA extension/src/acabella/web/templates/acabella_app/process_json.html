@@ -1,0 +1,57 @@
+{% include "top_layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="container" style="margin-top:30px">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <div class="container" style="margin-top:30px">
+      <p>
+        ACABELLA uses a specifc JSON format to describe (MA-)ABE schemes. Instead of using the input fields 
+        provided by this site, you can directly type the corresponding JSON description of the ABE scheme. You can check
+        the ACABELLA documentation or the example attacks for learning how to describe your ABE scheme.
+      </p>
+      </div>   
+      <form method="post" class="was-validated">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" name="title" id="title" value="{{ request.form['title'] }}" placeholder="e.g., cm14-json" style="margin-top:30px" required>
+            <small id="fieldDesc" class="form-text text-muted">ABE scheme identifier.</small>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top:30px">
+            <textarea class="form-control" name="body" id="body" rows="10" required placeholder="JSON description of the scheme">{{ request.form['body'] }}</textarea>
+            <small id="fieldDesc" class="form-text text-muted">JSON description of the scheme.</small>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top:30px">
+            <label for="analysis_select">Type of analysis:</label>
+            <select name="analysis_select">
+              {% for o in analysis_type %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>               
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" value="Analyze" style="margin-top:30px">Parse JSON</button>    
+      </form>
+    </div> 
+  </div>  
+{% endblock %}
+
+<p></p>
+{% extends "bottom_layout.html" %}
+

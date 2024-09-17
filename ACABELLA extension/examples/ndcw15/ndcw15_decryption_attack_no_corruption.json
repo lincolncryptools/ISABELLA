@@ -1,0 +1,32 @@
+{
+    "scheme_id": "ndcw15",
+    "analysis": "decryption",
+    "k": [
+        "alpha * (1 / (b1 + x3)) + x2 * b2 * (1 / (b1 + x3))",
+        "x1",
+        "x1 * b1"
+    ],
+    "c": [
+        "s",
+        "s * b1",
+        "s * b2"
+    ],
+    "mpk": [],
+    "gp": [
+        "b1",
+        "b2",
+        "1"
+    ],
+    "key": "alpha * s",
+    "unknown_vars": [
+        "alpha",
+        "b1",
+        "b2",
+        "s"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_AAi": [],
+    "MPK_AAj": [],
+    "misc_vars": []
+}

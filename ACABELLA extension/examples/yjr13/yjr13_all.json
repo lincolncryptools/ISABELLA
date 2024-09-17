@@ -1,0 +1,92 @@
+{
+    "scheme_id": "po17",
+    "security": {
+        "analysis": "security",
+        "is_fractional": "false",
+        "alpha": "alpha",
+        "s": "s",
+        "k": [
+            "alpha_i * (1 / x1) + x2 * b + r * (b / bp)",
+            "r * bp * (1 / x1)",
+            "r*b"
+        ],
+        "c": [
+            "s",
+            "s / bp"
+        ],
+        "mpk": [
+            "bp"
+        ],
+        "key": "alpha_i * s",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s",
+            "b",
+            "bp"
+        ],
+        "corruptable_vars": []
+    },
+    "master_key": {
+        "analysis": "master_key",
+        "k": [
+            "alpha_i * (1 / x1) + x2 * b + r * (b / bp)",
+            "r * bp * (1 / x1)",
+            "r*b"
+        ],
+        "master_key": "alpha_i",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s",
+            "b",
+            "bp"
+        ],
+        "corruption_model": "NoCorruption",
+        "corruptable_vars": [],
+        "MPK_CA": [],
+        "MPK_AA": [
+            "alpha_i",
+            "bp"
+        ],
+        "MPK_vars": [],
+        "GP_vars": []
+    },
+    "decryption": {
+        "analysis": "decryption",
+        "k": [
+            "alpha_i * (1 / x1) + x2 * b + r * (b / bp)",
+            "r * bp * (1 / x1)",
+            "r*b"
+        ],
+        "c": [
+            "s",
+            "s / bp"
+        ],
+        "mpk": [
+            "bp"
+        ],
+        "gp": [
+            "b"
+        ],
+        "key": "alpha_i * s",
+        "unknown_vars": [
+            "alpha_i",
+            "r",
+            "s",
+            "b",
+            "bp"
+        ],
+        "corruption_model": "NoCorruption",
+        "corruptable_vars": [],
+        "MPK_AAi": [
+            "alpha_i",
+            "bp"
+        ],
+        "MPK_AAj": [],
+        "misc_vars": [
+            "x1",
+            "x2"
+        ]
+    }
+}

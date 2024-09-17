@@ -1,0 +1,17 @@
+{
+    "scheme_id": "cm14",
+    "analysis": "decryption",
+    "k": ["(alpha_i + r) / b", "r"],
+    "c": ["s * b", "s * b2"],
+    "mpk": ["b"],
+    "gp": [],
+    "key" : "alpha_i * s",
+    "unknown_vars" :  ["alpha_i", "r", "s", "b", "b2"],
+    "corruption_model": "AA_extended",
+    "corruptable_vars": [
+        { "type":"MPK_AAi", "var":"b2" }
+         ],
+    "MPK_AAi": ["b2"],
+    "MPK_AAj": ["b"],
+    "misc_vars": []
+}

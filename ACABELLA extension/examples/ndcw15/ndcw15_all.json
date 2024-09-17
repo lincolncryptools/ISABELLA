@@ -1,0 +1,82 @@
+{
+    "scheme_id": "ndcw15",
+    "security": {
+        "analysis": "security",
+        "k": [
+            "alpha * (1 / (b1 + x3)) + x2 * b2 * (1 / (b1 + x3))",
+            "x1",
+            "x1 * b1"
+        ],
+        "c": [
+            "s",
+            "s * b1",
+            "s * b2"
+        ],
+        "mpk": [],
+        "key": "alpha * s",
+        "unknown_vars": [
+            "alpha",
+            "b1",
+            "b2",
+            "s"
+        ],
+        "corruptable_vars": []
+    },
+    "master_key": {
+        "analysis": "master_key",
+        "k": [
+            "alpha * (1 / (b1 + x3)) + x2 * b2 * (1 / (b1 + x3))",
+            "x1",
+            "x1 * b1"
+        ],
+        "master_key": "alpha",
+        "unknown_vars": [
+            "alpha",
+            "b1",
+            "b2",
+            "s"
+        ],
+        "corruption_model": "NoCorruption",
+        "corruptable_vars": [],
+        "MPK_CA": [
+            "alpha"
+        ],
+        "MPK_AA": [],
+        "MPK_vars": [],
+        "GP_vars": [
+            "b1",
+            "b2"
+        ]
+    },
+    "decryption": {
+        "analysis": "decryption",
+        "k": [
+            "alpha * (1 / (b1 + x3)) + x2 * b2 * (1 / (b1 + x3))",
+            "x1",
+            "x1 * b1"
+        ],
+        "c": [
+            "s",
+            "s * b1",
+            "s * b2"
+        ],
+        "mpk": [],
+        "gp": [
+            "b1",
+            "b2",
+            "1"
+        ],
+        "key": "alpha * s",
+        "unknown_vars": [
+            "alpha",
+            "b1",
+            "b2",
+            "s"
+        ],
+        "corruption_model": "NoCorruption",
+        "corruptable_vars": [],
+        "MPK_AAi": [],
+        "MPK_AAj": [],
+        "misc_vars": []
+    }
+}

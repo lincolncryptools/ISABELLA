@@ -1,0 +1,24 @@
+{
+    "scheme_id": "lxhh16",
+    "analysis": "master_key",
+    "k": [
+        "alpha_i + r * b",
+        "r"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "b",
+        "r"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_CA": [
+        "b"
+    ],
+    "MPK_AA": [
+        "alpha_i"
+    ],
+    "MPK_vars": [],
+    "GP_vars": []
+}

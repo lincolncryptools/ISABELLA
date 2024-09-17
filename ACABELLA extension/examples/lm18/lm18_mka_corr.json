@@ -1,0 +1,37 @@
+{
+    "scheme_id": "10.1109/ACCESS.2018.2858233",
+    "analysis": "master_key",
+    "k": [
+        "r",
+        "r*b",
+        "alpha_i/x1 + b*x2",
+        "b_i/x1"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "r",
+        "b",
+        "b_i"
+    ],
+    "corruption_model": "mixed_AA_corr",
+    "corruptable_vars": [
+        {
+            "type": "MPK_AA",
+            "var": "r"
+        }
+    ],
+    "MPK_CA": [
+        "r",
+        "r*b"
+    ],
+    "MPK_AA": [
+        "alpha_i",
+        "b_i",
+        "r"
+    ],
+    "MPK_vars": [],
+    "GP_vars": [
+        "b"
+    ]
+}

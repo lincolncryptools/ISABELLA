@@ -1,0 +1,24 @@
+{
+    "scheme_id": "10.1109/NaNA51271.2020.00070",
+    "analysis": "master_key",
+    "k": [
+        "x1",
+        "1/x1",
+        "alpha_i + x2*b_i",
+        "alpha_i/x1"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "b_i"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_CA": [],
+    "MPK_AA": [
+        "alpha_i",
+        "b_i"
+    ],
+    "MPK_vars": [],
+    "GP_vars": []
+}

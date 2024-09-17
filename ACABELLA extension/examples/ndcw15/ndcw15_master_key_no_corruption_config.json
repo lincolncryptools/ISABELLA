@@ -1,0 +1,27 @@
+{
+    "scheme_id": "ndcw15",
+    "analysis": "master_key",
+    "k": [
+        "alpha * (1 / (b1 + x3)) + x2 * b2 * (1 / (b1 + x3))",
+        "x1",
+        "x1 * b1"
+    ],
+    "master_key": "alpha",
+    "unknown_vars": [
+        "alpha",
+        "b1",
+        "b2",
+        "s"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_CA": [
+        "alpha"
+    ],
+    "MPK_AA": [],
+    "MPK_vars": [],
+    "GP_vars": [
+        "b1",
+        "b2"
+    ]
+}

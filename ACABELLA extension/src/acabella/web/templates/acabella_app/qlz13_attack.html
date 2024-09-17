@@ -1,0 +1,97 @@
+{% include "top_layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="container" style="margin-top:30px">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <div class="container" style="margin-top:30px">
+    <p>
+      These parameters correspond to the description of the <strong>[QLZ13]</strong> scheme,
+      published as:
+    </p>
+    <p>
+      <pre>
+        H. Qian, J. Li, and Y. Zhang, “Privacy-Preserving Decentralized Ciphertext-Policy
+        Attribute-Based Encryption with Fully Hidden Access Structure”, in ICICS’13, pp.
+        363 - 372, Springer, 2013
+      </pre>
+    In this example, ACABELLA looks for a master-key attack without relying on the corruption of the authorities.
+    </p>
+    </div>   
+    <form method="post" class="was-validated">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" name="title" id="title" value="QLZ13-mk" placeholder="e.g., cm14-sec-mk" style="margin-top:30px" required>
+          <small id="fieldDesc" class="form-text text-muted">ABE scheme identifier.</small>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" name="master_key" id="master_key" value="alpha_i" required placeholder="e.g., master key or blinding value" style="margin-top:30px">
+          <small id="fieldDesc" class="form-text text-muted">Description of the target.</small>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="k" id="k" rows="3" required placeholder="e.g., [&quot;(alpha_i + r) / b&quot;, &quot;r&quot;]">["alpha_i + r * b + b1 / (x + bp)", "r * b - rp * b1", "(rp + 1 / (x + bp)) * b1"]</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of key encodings.</small>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="unknown" id="unknown" rows="3" placeholder="e.g., [&quot;alpha_i&quot;, &quot;r&quot;, &quot;s&quot;,&quot;b&quot;]">["alpha_i", "b", "b1", "bp", "r", "rp", "x"]</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of unknown variables.</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="gp_vars" id="gp_vars" rows="3" placeholder="e.g., [&quot;b&quot;]">{{ request.form['gp_vars'] }}</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of GP encodings.</small>
+        </div>
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="corr_vars" id="corr_vars" rows="3" placeholder="e.g., [{ &quot;type&quot;:&quot;MPK_AA&quot;, &quot;var&quot;:&quot;b&quot;}]">{{ request.form['corr_vars'] }}</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of variables obtained via corruption.</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="mpk_ca_vars" id="mpk_ca_vars" rows="3" placeholder="e.g., [&quot;b&quot;]">{{ request.form['mpk_ca_vars'] }}</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of MPK CA encodings.</small>
+        </div>
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="mpk_aa_vars" id="mpk_aa_vars" rows="3" placeholder="e.g., [&quot;b&quot;]">["alpha_i", "bp"]</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of MPK AA encodings.</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="margin-top:30px">
+          <textarea class="form-control" name="mpk_vars" id="mpk_vars" rows="3" placeholder="e.g., [&quot;b&quot;]">{{ request.form['mpk_vars'] }}</textarea>
+          <small id="fieldDesc" class="form-text text-muted">List of MPK encodings.</small>
+        </div>
+        <div class="col" style="margin-top:30px">
+          <label for="corruption_select">Corruption model</label>
+          <select name="corruption_select">
+            {% for o in corruption_type %}
+            <option value="{{ o.name }}">{{ o.name }}</option>
+            {% endfor %}
+          </select>               </div>
+      </div>
+      <button type="submit" class="btn btn-primary" value="Analyze" style="margin-top:30px">Look for master-key attacks</button>    
+    </form>
+  </div> 
+</div> 
+{% endblock %}
+
+<p></p>
+{% extends "bottom_layout.html" %}
+

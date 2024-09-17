@@ -1,0 +1,32 @@
+{
+    "scheme_id": "yj12",
+    "analysis": "master_key",
+    "k": [
+        "r * b / bp + alpha_i/bp",
+        "r"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "r"
+    ],
+    "corruption_model": "mixed_AA_corr",
+    "corruptable_vars": [
+        {
+            "type": "MPK_AA",
+            "var": "b/bp"
+        }
+    ],
+    "MPK_CA": [
+        "r"
+    ],
+    "MPK_AA": [
+        "alpha_i",
+        "b/bp"
+    ],
+    "MPK_vars": [],
+    "GP_vars": [
+        "b",
+        "bp"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "scheme_id": "po17",
+    "analysis": "security",
+    "k": [
+        "(alpha_i - r) / b",
+        "r"
+    ],
+    "c": [
+        "s * b"
+    ],
+    "mpk": [
+        "b"
+    ],
+    "key": "alpha_i * s",
+    "unknown_vars": [
+        "alpha_i",
+        "r",
+        "s",
+        "b"
+    ],
+    "corruptable_vars": []
+}

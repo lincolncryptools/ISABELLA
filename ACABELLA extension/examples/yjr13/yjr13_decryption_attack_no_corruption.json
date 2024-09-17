@@ -1,0 +1,38 @@
+{
+    "scheme_id": "yjr13",
+    "analysis": "decryption",
+    "k": [
+        "alpha_i * (1 / x1) + x2 * b + r * (b / bp)",
+        "r * bp * (1 / x1)",
+        "r*b"
+    ],
+    "c": [
+        "s",
+        "s / bp"
+    ],
+    "mpk": [
+        "bp"
+    ],
+    "gp": [
+        "b"
+    ],
+    "key": "alpha_i * s",
+    "unknown_vars": [
+        "alpha_i",
+        "r",
+        "s",
+        "b",
+        "bp"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_AAi": [
+        "alpha_i",
+        "bp"
+    ],
+    "MPK_AAj": [],
+    "misc_vars": [
+        "x1",
+        "x2"
+    ]
+}

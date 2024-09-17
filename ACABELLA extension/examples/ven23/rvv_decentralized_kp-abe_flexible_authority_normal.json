@@ -1,0 +1,44 @@
+{
+    "scheme_id": "rvv_decentralized_kp-abe_flexible_authority_normal",
+    "analysis": "security",
+    "k": [
+        "alpha1*A111 + v12*A112 + rgid*b1 + r11 * b1p",
+        "alpha1*A121 + v12*A122 + rgid*b1 + r12 * b2p",
+        "alpha2*A211 + v22*A212 + rgid*b2 + r21 * b1p",
+        "alpha2*A221 + v22*A222 + rgid*b2 + r23 * b3p",
+        "rgid",
+        "r11",
+        "r12",
+        "r21",
+        "r23"
+    ],
+    "c": [
+        "s*b1 + v1",
+        "s*b1p",
+        "s*b2 - v1",
+        "s*b3p",
+        "s"
+    ],
+    "mpk": [
+        "alpha1",
+        "alpha2",
+        "b1",
+        "b2",
+        "b1p",
+        "b2p",
+        "b3p",
+        "b4p"
+    ],
+    "key": "(alpha1 + alpha2)*s",
+    "known_vars": [
+        "A111",
+        "A112",
+        "A121",
+        "A122",
+        "A211",
+        "A212",
+        "A221",
+        "A222"
+    ],
+    "corruptable_vars": []
+}

@@ -1,0 +1,40 @@
+{
+    "scheme_id": "10.1109/HPCC/SmartCity/DSS.2019.00092",
+    "analysis": "decryption",
+    "k": [
+        "alpha_i + b1 * x + b2 * r",
+        "r"
+    ],
+    "c": [
+        "s",
+        "s * b2"
+    ],
+    "mpk": [],
+    "gp": [
+        "b1",
+        "b2"
+    ],
+    "key": "alpha_i * s",
+    "unknown_vars": [
+        "alpha_i",
+        "b2",
+        "b",
+        "r",
+        "s",
+        "x"
+    ],
+    "corruption_model": "AA",
+    "corruptable_vars": [
+        {
+            "type": "misc",
+            "var": "x"
+        }
+    ],
+    "MPK_AAi": [
+        "alpha_i"
+    ],
+    "MPK_AAj": [],
+    "misc_vars": [
+        "x"
+    ]
+}

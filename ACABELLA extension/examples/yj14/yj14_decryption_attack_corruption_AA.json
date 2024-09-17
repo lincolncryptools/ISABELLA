@@ -1,0 +1,41 @@
+{
+    "scheme_id": "yj14",
+    "analysis": "decryption",
+    "k": [
+        "alpha_i + x * b + r * bp",
+        "r"
+    ],
+    "c": [
+        "s",
+        "s * bp"
+    ],
+    "mpk": [
+        "b",
+        "bp"
+    ],
+    "gp": [],
+    "key": "alpha_i * s",
+    "unknown_vars": [
+        "alpha_i",
+        "b",
+        "bp",
+        "r",
+        "s",
+        "x"
+    ],
+    "corruption_model": "AA",
+    "corruptable_vars": [
+        {
+            "type": "misc",
+            "var": "x"
+        }
+    ],
+    "MPK_AAi": [
+        "alpha_i",
+        "x"
+    ],
+    "MPK_AAj": [],
+    "misc_vars": [
+        "x"
+    ]
+}

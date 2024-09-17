@@ -1,0 +1,28 @@
+# mkdocs.yml
+site_name: ACABELLA
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+  - search
+  - bibtex:
+      bib_file: "refs.bib"
+
+nav:
+  - Introduction: index.md
+  - Security analysis: ac17.md
+  - Finding master key attacks: master.md
+  - Finding decryption attacks: decryption.md
+  - Utilization of corruption: corruption.md
+  - Tools: tools.md
+  - JSON description: json.md
+  - Bridge to the ABGW17 analyzer: abgw.md
+  - Reference API: reference.md
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math

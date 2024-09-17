@@ -1,0 +1,10 @@
+{
+    "scheme_id": "bsw07",
+    "analysis": "security",
+    "k": ["(alpha + r)/b", "r + r0 * b0", "r0", "(alpha + rp)/b", "rp + r1 * b1", "r1"],
+    "c": ["s*b", "s - sp", "(s - sp)*b0", "sp * b1", "sp"],
+    "mpk": ["b", "b0", "b1", "1"],
+    "key" : "alpha * s",
+    "unknown_vars" :  ["alpha", "b", "b0", "b1", "r", "rp", "r0", "r1", "s", "sp"],
+    "corruptable_vars": []
+}

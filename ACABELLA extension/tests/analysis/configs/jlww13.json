@@ -1,0 +1,11 @@
+{
+    "scheme_id": "jlww13",
+    "analysis": "conditional",
+    "k_fixed": ["alpha + r"],
+    "k_indexed": ["att_mpk_group*indexed_enc_rp_1 + r", "indexed_enc_rp_1"],
+    "c_fixed": [],
+    "c_indexed": ["att_mpk_group*lambda_policy_share", "lambda_policy_share"],
+    "indexed_vars_k": ["rp"],
+    "indexed_vars_c": [],
+    "unknown": ["alpha", "r", "s"]
+}

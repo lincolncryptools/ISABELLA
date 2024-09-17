@@ -1,0 +1,4 @@
+sympy==1.12
+click==8.1.7
+Flask==3.0.2
+Werkzeug==3.0.1

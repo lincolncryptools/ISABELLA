@@ -1,0 +1,27 @@
+{
+    "scheme_id": "mgz19",
+    "analysis": "master_key",
+    "k": [
+        "alpha_j + r * b_j",
+        "b_j"
+    ],
+    "master_key": "alpha_j",
+    "unknown_vars": [
+        "alpha_j",
+        "b_j",
+        "r"
+    ],
+    "corruption_model": "NoCorruption",
+    "corruptable_vars": [],
+    "MPK_CA": [
+        "r"
+    ],
+    "MPK_AA": [
+        "alpha_j",
+        "b_j"
+    ],
+    "MPK_vars": [
+        "b_j"
+    ],
+    "GP_vars": []
+}

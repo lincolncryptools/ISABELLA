@@ -1,0 +1,30 @@
+{
+    "scheme_id": "yjr13",
+    "analysis": "master_key",
+    "k": [
+        "alpha_i * (1 / x1) + x2 * b + r * (b / bp)",
+        "r * bp * (1 / x1)",
+        "r*b"
+    ],
+    "master_key": "alpha_i",
+    "unknown_vars": [
+        "alpha_i",
+        "r",
+        "s",
+        "b"
+    ],
+    "corruption_model": "AA",
+    "corruptable_vars": [
+        {
+            "type": "MPK_AA",
+            "var": "bp"
+        }
+    ],
+    "MPK_CA": [],
+    "MPK_AA": [
+        "alpha_i",
+        "bp"
+    ],
+    "MPK_vars": [],
+    "GP_vars": []
+}

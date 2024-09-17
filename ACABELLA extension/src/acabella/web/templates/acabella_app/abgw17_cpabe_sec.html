@@ -1,0 +1,102 @@
+{% include "top_layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="container" style="margin-top:30px">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <div class="container" style="margin-top:30px">
+      <p> These parameters correspond to the description of the unbounded CP-ABE scheme in
+        <strong>[ABGW17]</strong>, published as:
+      </p>
+      <p>
+        <pre>
+          Miguel Ambrona, Gilles Barthe, Romain Gay, Hoeteck Wee, "Attribute-Based Encryption in the Generic
+          Group Model: Automated Proofs and New Constructions", CCS 2017. 
+        </pre>
+      In this example, ACABELLA performs a full analysis on the scheme, checks its security and looks for master-key attacks and decryption attacks.
+      Particularly in this case, we utilize the following policy matrix when looking for decryption attacks: \(\begin{pmatrix} 1 & 1 \\ 0 & -1 \end{pmatrix}\),
+      which is the matrix representation of an AND gate over two attributes, e.g., x_1 AND x_2.
+      </p>
+      </div>   
+      <form method="post" class="was-validated">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" name="title" id="title" value="abgw17-cp-abe-complete" placeholder="e.g., cm14-json" style="margin-top:30px" required>
+            <small id="fieldDesc" class="form-text text-muted">ABE scheme identifier.</small>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top:30px">
+            <textarea class="form-control" name="body" id="body" rows="10" required placeholder="JSON description of the scheme">
+              {
+              "scheme_id": "abgw17-cp-abe-complete",
+              "security":{
+                  "analysis": "security",
+                  "k": ["alpha + b*r", "r", "bp*r/(b0 + b1*y)", "bp*r/(b0 + b1*x1)"],
+                  "c": ["A11*s + A12*sp", "b*(A11*s + A12*sp) + bp*s1", "s1*(b0 + b1*x1)"],
+                  "mpk": ["b", "b0", "b1", "bp", "1"],
+                  "key" : "alpha * s",
+                  "unknown_vars" :  ["alpha", "b", "bp", "b0", "b1", "r", "rp", "r0", "r1", "s", "sp", "s1", "s2"],
+                  "corruptable_vars": []
+              },
+              "master_key":{
+                  "analysis": "master_key",
+                  "k": ["alpha + b*r", "r", "bp*r/(b0 + b1*y)", "bp*r/(b0 + b1*x1)"],
+                  "master_key": "alpha",
+                  "unknown_vars" :  ["alpha", "b", "bp", "b0", "b1", "r", "rp", "r0", "r1", "s", "sp", "s1", "s2"],
+                  "corruption_model" : "NoCorruption",
+                  "corruptable_vars": [],
+                  "MPK_CA": ["alpha"],
+                  "MPK_AA": [],
+                  "MPK_vars": ["b", "b0", "b1", "bp"],
+                  "GP_vars": []
+                  },
+              "decryption":{
+                  "analysis": "decryption",
+                  "k": ["alpha + b*r", "r", "bp*r/(b0 + b1*y)", "bp*r/(b0 + b1*x1)", "alpha + b*rp", "rp", "bp*rp/(b0 + b1*y)", "bp*rp/(b0 + b1*x2)"],
+                  "c": ["s + sp", "b*(s + sp) + bp*s1", "s1*(b0 + b1*x1)", "-sp", "-b*sp + bp*s2", "s2*(b0 + b1*x2)"],
+                  "mpk": ["b", "b0", "b1", "bp", "1"],
+                  "gp": [],
+                  "key" : "alpha * s",
+                  "unknown_vars" :  ["alpha", "b", "bp", "b0", "b1", "r", "rp", "r0", "r1", "s", "sp", "s1", "s2"],
+                  "corruption_model": "NoCorruption",
+                  "corruptable_vars": [],
+                  "MPK_AAi": [],
+                  "MPK_AAj": [],
+                  "misc_vars": []
+                  }
+              }</textarea>
+            <small id="fieldDesc" class="form-text text-muted">JSON description of the scheme.</small>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-top:30px">
+            <label for="analysis_select">Type of analysis:</label>
+            <select name="analysis_select">
+              {% for o in analysis_type %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>               
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" value="Analyze" style="margin-top:30px">Parse JSON</button>    
+      </form>
+    </div> 
+  </div>  
+{% endblock %}
+
+<p></p>
+{% extends "bottom_layout.html" %}
+

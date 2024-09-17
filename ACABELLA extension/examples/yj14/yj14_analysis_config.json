@@ -1,0 +1,26 @@
+{
+    "scheme_id": "yj14",
+    "analysis": "security",
+    "k": [
+        "alpha_i + x * b + r * bp",
+        "r"
+    ],
+    "c": [
+        "s",
+        "s * bp"
+    ],
+    "mpk": [
+        "b",
+        "bp"
+    ],
+    "key": "alpha_i * s",
+    "unknown_vars": [
+        "alpha_i",
+        "b",
+        "bp",
+        "r",
+        "s",
+        "x"
+    ],
+    "corruptable_vars": []
+}
